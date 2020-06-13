@@ -1,0 +1,184 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    font-family: sans-serif;
+}
+.app{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.messagebox{
+    position: relative;
+    width: 400px;
+    height: auto;
+    box-shadow: 0px 0px 1px #000;
+}
+.messagebox-head{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 1px 1px #b2bec3;
+}
+.messagebox-head-title{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.messagebox-contents{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.messagebox-contents-text{
+    position: relative;
+    top: 36px;
+    display: flex;
+    max-width: 50%; 
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    font-size: 1rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #7646ff;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 14px 14px 0px 14px;
+    color: #fff;
+}
+.messagebox-contents-text::before{
+    content: "";
+    position: absolute;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background-color: transparent;
+}
+.messagebox-contents-text-icon{
+    visibility: hidden;
+    position: absolute;
+    left: -20px;
+    font-size: 18px;
+    color: #949494;
+}
+.messagebox-contents-text:hover .messagebox-contents-text-icon{
+   visibility: visible;
+}
+.messagebox-contents-text-icon:hover{
+    color: #000;
+    cursor: pointer;
+}
+.messagebox-contents-text-icons{
+    position: absolute;
+    display: flex;
+    bottom: 106%;
+    right: 50%;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+.messagebox-contents-text-icons-icon{
+    margin: 0px 6px;
+    font-size: 1.2rem;
+}
+.messagebox-contents-text-icons-icon:nth-child(1){
+    color: red;
+}
+.messagebox-contents-text-icons-icon:nth-child(2),
+.messagebox-contents-text-icons-icon:nth-child(3)
+{
+    color: yellow;
+}
+.messagebox-contents-text-icons-icon:hover{
+    transform:translateY(-2px)  scale(1.2);
+    cursor: pointer;
+}
+.messagebox-input{
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 30px;
+}
+.messagebox-input-icons{
+    position: absolute;
+    top: 50%;
+    right: 18%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: #7646ff;
+    cursor: pointer;
+}
+#showicons:checked ~ .messagebox-input-icons-icon{
+    display: block;
+}
+#showicons:checked ~ .messagebox-input-icons-icon-retangle{
+    display: block;
+}
+.messagebox-input-icons-icon{
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    right: 16%;
+    width: 140px;
+    height: 140px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    overflow-y: auto;
+}
+.messagebox-input-icons-icon-retangle{
+    display: none;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    bottom: 118%;
+    right: 21%;
+    transform: rotate(45deg);
+    box-shadow: 8px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.messagebox-input-icons-icon-circalcolor{
+    display: inline-block;
+    width: 20%;
+    height: 17%;
+    border-radius: 50%;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+.messagebox-input-icons-icon-child{
+    text-align: center;
+    width: 20%;
+    margin: 5px 0px;
+    font-size: 1.2rem;
+    color: #7646ff;
+    cursor: pointer;
+}
+.messagebox-input-text{
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 32px;
+    font-size: 0.8rem;
+    border-radius: 40px;
+    background-color: #dfe6e9;
+}
+.messagebox-input-send{
+    outline: none;
+    width: 16%;
+    border: 1px solid #b2bec3;
+}
+.messagebox-input-send:hover{
+    cursor: pointer;
+}
+
+
