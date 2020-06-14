@@ -7,10 +7,25 @@ var todoList = [];
         if(value != ''){
             todoList.push(value);
             let changeSpan = todoList.map((x)=>{
-                return '<span class="messagebox-contents-text">' + x + '<i class="messagebox-contents-text-icon far fa-smile"></i></span>';
+                return '<span class="messagebox-contents-text">'
+                 + x + 
+                '<label for="checkicons" class="messagebox-contents-text-icon far fa-smile"></label>'+
+                '<input type="checkbox" hidden id="checkicons">'+
+                '<div class="hidllen messagebox-contents-text-icons">'+
+                '<i class="messagebox-contents-text-icons-icon fas fa-heart"></i>'+
+                '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-up"></i>'+
+                '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-down"></i>'+
+                '</div>'+'</span>';
             });
             render(changeSpan);
             input.value = '';
+            var iconFeel = document.querySelectorAll('.messagebox-contents-text-icon');
+            var iconFeelchild = document.querySelectorAll('.messagebox-contents-text-icons');
+            iconFeel.forEach((x,index)=>{
+                x.addEventListener('click',()=>{
+                iconFeelchild[index].classList.toggle("hidllen");
+                })
+            })
         }
     });
 function render(changeSpan){
@@ -26,7 +41,7 @@ let keyDown = (event)=>{
                  + x + 
                 '<label for="checkicons" class="messagebox-contents-text-icon far fa-smile"></label>'+
                 '<input type="checkbox" hidden id="checkicons">'+
-                '<div class="messagebox-contents-text-icons">'+
+                '<div class="hidllen messagebox-contents-text-icons">'+
                 '<i class="messagebox-contents-text-icons-icon fas fa-heart"></i>'+
                 '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-up"></i>'+
                 '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-down"></i>'+
@@ -34,6 +49,13 @@ let keyDown = (event)=>{
             });
             render(changeSpan);
             input.value = '';
+            var iconFeel = document.querySelectorAll('.messagebox-contents-text-icon');
+            var iconFeelchild = document.querySelectorAll('.messagebox-contents-text-icons');
+            iconFeel.forEach((x,index)=>{
+                x.addEventListener('click',()=>{
+                iconFeelchild[index].classList.toggle('hidllen');
+                })
+            })
         }
     }
 }
@@ -48,13 +70,28 @@ iconColor.forEach((x)=>{
         let colors = x.style.background;
         let changeString = colors.toString();
         var changeSpancolor = todoList.map((x)=>{
-            return '<span style= "background:'+changeString+' ;"class="messagebox-contents-text">' + x + '<i class="messagebox-contents-text-icon far fa-smile"></i></span>';
+            return '<span style= "background:'+changeString+' ;"class="messagebox-contents-text">' 
+            + x + 
+            '<label for="checkicons" class="messagebox-contents-text-icon far fa-smile"></label>'+
+            '<input type="checkbox" hidden id="checkicons">'+
+            '<div class="hidllen messagebox-contents-text-icons">'+
+            '<i class="messagebox-contents-text-icons-icon fas fa-heart"></i>'+
+            '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-up"></i>'+
+            '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-down"></i>'+
+            '</div>'+'</span>';
         });
         headder.style.background = changeString;
         headderText.style.color = '#fff';
         render(changeSpancolor);
         iconFather.style.color = changeString;
         removeEventListener('keydown',keyDown);
+        var iconFeel = document.querySelectorAll('.messagebox-contents-text-icon');
+            var iconFeelchild = document.querySelectorAll('.messagebox-contents-text-icons');
+            iconFeel.forEach((x,index)=>{
+                x.addEventListener('click',()=>{
+                iconFeelchild[index].classList.toggle("hidllen");
+            })
+        })
         let keyDowns = (event)=>{
             if(event.keyCode === 13){
                 var value = input.value;
@@ -62,10 +99,25 @@ iconColor.forEach((x)=>{
                 if(value != ''){
                     todoList.push(value);
                     let changeSpancolor = todoList.map((x)=>{
-                        return '<span style= "background:'+headderColor+' ;"class="messagebox-contents-text">' + x + '<i class="messagebox-contents-text-icon far fa-smile"></i></span>';
+                        return '<span style= "background:'+headderColor+' ;"class="messagebox-contents-text">'
+                         + x + 
+                         '<label for="checkicons" class="messagebox-contents-text-icon far fa-smile"></label>'+
+                         '<input type="checkbox" hidden id="checkicons">'+
+                         '<div class="hidllen messagebox-contents-text-icons">'+
+                         '<i class="messagebox-contents-text-icons-icon fas fa-heart"></i>'+
+                         '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-up"></i>'+
+                         '<i class="messagebox-contents-text-icons-icon fas fa-thumbs-down"></i>'+
+                         '</div>'+'</span>';
                     });
                     render(changeSpancolor);
                     input.value = '';
+                    var iconFeel = document.querySelectorAll('.messagebox-contents-text-icon');
+                    var iconFeelchild = document.querySelectorAll('.messagebox-contents-text-icons');
+                    iconFeel.forEach((x,index)=>{
+                        x.addEventListener('click',()=>{
+                        iconFeelchild[index].classList.toggle("hidllen");
+                    })
+                })
                 }
             }
         }

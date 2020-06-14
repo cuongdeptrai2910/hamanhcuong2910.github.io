@@ -180,5 +180,8 @@ body{
 .messagebox-input-send:hover{
     cursor: pointer;
 }
+.hidllen{
+    visibility: hidden;
+}
 
 
